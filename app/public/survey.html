@@ -1,0 +1,215 @@
+<!-- 1. Your survey should have 10 questions of your choosing. 
+    Each answer should be on a scale of 1 to 5 based on how much 
+    the user agrees or disagrees with a question. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">
+                <span class="fa fa-allergies"></span> Friend Survey</h1>
+            <hr>
+            <h4 class="text-center">There are 10 questions to answer.  <p> 5 = totally agree, 3 = neutral, 1 = disagree</h4>
+        </div>
+        <div class ="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        Questions:
+                    </div>
+                <div class="card-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="friend-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Link to photo</label>
+                            <input type="text" class="form-control" id="friend-photo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question1">Q1. Dogs are better than cats</label>
+                            <select class="form-control" id="q1">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question2">Q2. Something</label>
+                            <select class="form-control" id="q2">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question3">Q3. Yes</label>
+                            <select class="form-control" id="q3">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question4">Q4. Yes</label>
+                            <select class="form-control" id="q4">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question5">Q5. Yes</label>
+                            <select class="form-control" id="q5">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question6">Q6. Dogs are better than cats</label>
+                            <select class="form-control" id="q6">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question7">Q7. Something</label>
+                            <select class="form-control" id="q7">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question8">Q8. Yes</label>
+                            <select class="form-control" id="q8">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question9">Q9. Yes</label>
+                            <select class="form-control" id="q9">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="question10">Q10. Yes</label>
+                            <select class="form-control" id="q10">
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary submit" id="submit">Find me a friend!</button>
+
+
+                    </form>
+                </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">Friends link</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+$(".submit").on("click", function(event) {
+    event.preventDefault();
+
+    var newFriend = {
+        name: $("#friend-name").val().trim(),
+        photo: $("#friend-photo").val().trim(),
+        scores: [$("#q1").val(),
+        $("#q2").val(),
+        $("#q3").val(),
+        $("#q4").val(),
+        $("#q5").val(),
+        $("#q6").val(),
+        $("#q7").val(),
+        $("#q8").val(),
+        $("#q9").val(),
+        $("#q10").val()
+        ]
+    };
+
+    var totalScore = 0
+
+    for (var i =0; i < newFriend.scores.length; i++) {
+        totalScore += parseInt(newFriend.scores[i]);
+    }
+
+    console.log("tS: " + totalScore)
+
+    // console.log("new friend " + newFriend.name + newFriend.photo + newFriend.scores);
+
+    // $.post("/api/friends", newFriend) 
+    //     .then(function(data) {
+    //         console.log(data);
+    //         alert("Adding up your responses...");
+    //     });
+
+});
+
+
+</script>
