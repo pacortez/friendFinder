@@ -177,7 +177,9 @@
 $(".submit").on("click", function(event) {
     event.preventDefault();
 
-    var newFriend = {
+   
+
+    var currentFriend = {
         name: $("#friend-name").val().trim(),
         photo: $("#friend-photo").val().trim(),
         scores: [$("#q1").val(),
@@ -190,24 +192,19 @@ $(".submit").on("click", function(event) {
         $("#q8").val(),
         $("#q9").val(),
         $("#q10").val()
-        ]
+        ],
+        
     };
 
-    var totalScore = 0
 
-    for (var i =0; i < newFriend.scores.length; i++) {
-        totalScore += parseInt(newFriend.scores[i]);
-    }
-
-    console.log("tS: " + totalScore)
 
     // console.log("new friend " + newFriend.name + newFriend.photo + newFriend.scores);
 
-    // $.post("/api/friends", newFriend) 
-    //     .then(function(data) {
-    //         console.log(data);
-    //         alert("Adding up your responses...");
-    //     });
+    $.post("/api/friends", currentFriend) 
+        .then(function(data) {
+            console.log(data);
+            alert("Adding up your responses...");
+        });
 
 });
 
