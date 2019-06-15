@@ -22,24 +22,24 @@
 
 var friendsArray = [
     {
-        name: "Pau",
-        photo: "image",
+        name: "Bob",
+        photo: "<img src=http://placekitten.com/200/300>",
         scores: [
             1, 
-            2, 
-            3, 
-            4, 
-            5, 
             1, 
-            2, 
-            3, 
-            4, 
-            5],
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1, 
+            1],
         totalScore: 30
     },
     {
-        name: "twos",
-        photo: "image",
+        name: "Pete",
+        photo: "<img src=https://saveapetil.org/wp-content/themes/saveapet/images/dog.jpg>",
         scores: [
             2, 
             2, 
@@ -53,8 +53,8 @@ var friendsArray = [
             2],
     },
     {
-        name: "threes",
-        photo: "image",
+        name: "Blue",
+        photo: "<img src=http://www.placepuppy.net/400/250>",
         scores: [
             3, 
             3, 
